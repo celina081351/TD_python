@@ -57,25 +57,18 @@ class Jeu:
             creature.position = nouvelle_position
             for autre_creature in self.listeDesCreatures:
                 if autre_creature.position == nouvelle_position:
-                    print(f"{creature.nom} a capturé {autre_creature.nom}!")
+                    print(f"{autre_creature.nom} a été capturée par {creature.nom}!")
                     return True
             self.tour += 1
             self.actif = self.listeDesCreatures[self.tour % len(self.listeDesCreatures)]
         return False
 
-
-
-
-
-# 6
-
-creatures = [Creature("A", Case(0, 0)), Creature("B", Case(3, 3))]
+#6
+creature1 = Creature("Creature1", Case(0, 0))
+creature2 = Creature("Creature2", Case(3, 3))
+creatures = [creature1, creature2] 
 jeu = Jeu(4, 4, creatures)
-print(jeu)
-
-
-
-# 7
+#7
 
 while True:
     print(jeu)
